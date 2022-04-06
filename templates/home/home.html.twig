@@ -1,0 +1,145 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+
+    <section id="homepage">
+
+        <div id="homepage-picture"
+             class="position-relative d-flex flex-column justify-content-center align-items-center"
+             style="background-image: url('{{ asset('assets/images/homepage-picture.jpg') }}'); background-size: cover;">
+            <div class="slogan text-uppercase h2" style="padding-left: 5px;">Laissez parler votre style</div>
+            <a href="#" class="homepage-rdv text-uppercase h4 m-4">Prendre rendez-vous</a>
+            <div class="smoke-effect position-absolute"></div>
+        </div>
+
+        <div id="prestations" class="my-5 pb-5">
+            <div class="prestations-title text-uppercase text-center h3 my-5 py-5 text-primary">Les prestations</div>
+            <div class="prestations-container col-md-9 mx-auto d-flex justify-content-between align-items-center flex-wrap">
+                <div class="coupe-container d-flex flex-column justify-content-center align-items-center mx-auto m-4"
+                     style="background-image: url('{{ asset('assets/images/coupe-picture.jpg') }}')">
+                    <div class="coupe-title text-uppercase text-light fw-bold fs-5">Coupe</div>
+                    <div class="coupe-price text-light">A partir de 20€</div>
+                    <div id="smoke-graduade-effect"></div>
+                </div>
+                <div class="homepage-separator bg-secondary"></div>
+                <div class="barbe-container d-flex flex-column justify-content-center align-items-center mx-auto m-4"
+                     style="background-image: url('{{ asset('assets/images/barbe-picture.jpg') }}')">
+                    <div class="coupe-title text-uppercase text-light fw-bold fs-5">Barbe</div>
+                    <div class="coupe-price text-light">A partir de 15€</div>
+                    <div id="smoke-graduade-effect"></div>
+                </div>
+                <div class="homepage-separator bg-secondary"></div>
+                <div class="children-container d-flex flex-column justify-content-center align-items-center mx-auto m-4"
+                     style="background-image: url('{{ asset('assets/images/children-coupe.jpg') }}')">
+                    <div class="coupe-title text-uppercase text-light fw-bold fs-5">Enfant</div>
+                    <div class="coupe-price text-light">A partir de 10€</div>
+                    <div id="smoke-graduade-effect"></div>
+                </div>
+            </div>
+            <div class="about-prestation text-center my-5">
+                <a href="#" class="text-light text-decoration-underline">Voir les détails</a>
+            </div>
+        </div>
+
+        <div id="about-barbershop" class="mb-5 pb-5">
+            <div class="salon-container d-flex justify-content-end">
+                <div class="salon col-md-10 d-flex justify-content-between">
+                    <div class="about-salon col-4 d-flex flex-column justify-content-center">
+                        <div class="salon-title text-uppercase h2 text-primary mb-4">Le salon</div>
+                        <div class="salon-description">
+                            <p class="text-light fs-6">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis facilisis
+                                lacus
+                                ut tristique. Nam ac ultrices eros. Quisque mollis tristique augue non faucibus. Fusce
+                                ultrices feugiat volutpat. Donec vestibulum mi a magna dignissim ultrices. Proin euismod
+                                odio accumsan, porta tellus sed, tristique elit. Curabitur semper et augue ut elementum.
+                                Mauris sagittis elementum nibh, id aliquam sem luctus at. Suspendisse fermentum nisl id
+                                euismod consectetur. Donec rhoncus elit ac quam sollicitudin ultrices. Mauris non elit
+                                nulla. Nulla porta velit ut lectus luctus ultrices. Integer fermentum ac ante non
+                                tincidunt.
+                                In ut lobortis sapien. Proin sed mi ut mauris porttitor porttitor. Donec posuere eget
+                                nunc
+                                at consequat.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="salon-picture-container col-7">
+                        <div class="salon-picture"
+                             style="background-image: url('{{ asset('assets/images/salon.jpg') }}'); height: 700px; width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="our-barber col-md-12 d-flex mt-4">
+                <div class="salon d-flex">
+                    <div class="salon-picture-container col-6">
+                        <div class="salon-picture"
+                             style="background-image: url('{{ asset('assets/images/our-barber.jpeg') }}'); height: 700px; width: 100%"></div>
+                    </div>
+                    <div class="about-salon col-4 d-flex flex-column justify-content-center ms-4">
+                        <div class="salon-title text-uppercase h2 text-primary mb-4">Votre coiffeur</div>
+                        <div class="salon-description">
+                            <p class="text-light fs-6">
+                                Pellentesque consequat orci nulla, id tristique ligula dictum non. Vestibulum ac
+                                pulvinar elit, non aliquam nulla. Sed ut justo laoreet, luctus ex vitae, fringilla
+                                nulla. Curabitur rutrum convallis auctor. Nunc tristique leo quis libero viverra, vitae
+                                auctor ante tincidunt. Duis neque lorem, sodales tincidunt aliquam vel, consectetur a
+                                sem. Aliquam in leo neque. Ut pellentesque commodo tortor, sit amet congue leo. Proin
+                                dictum sodales felis, nec laoreet felis vestibulum at.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="our-achievements" class="my-5 py-5 d-flex justify-content-center">
+            <a href="#" class="see-achievements-btn text-uppercase h4 m-4">Voir nos réalisations</a>
+        </div>
+
+    </section>
+
+    <script>
+        let homepagePicture = document.getElementById('homepage-picture');
+        let homepagePictureHeight = window.innerHeight;
+        homepagePictureHeight = homepagePictureHeight - 100;
+        console.log(homepagePictureHeight);
+
+        addEventListener('DOMContentLoaded', function () {
+
+            homepagePicture.style.height = homepagePictureHeight + "px";
+        })
+
+        let homepageBookingBtn = document.getElementsByClassName('homepage-rdv');
+        homepageBookingBtn = homepageBookingBtn[0];
+        console.log(homepageBookingBtn);
+
+        homepageBookingBtn.addEventListener('mouseenter', function () {
+
+            homepageBookingBtn.style.letterSpacing = 3 + "px";
+        })
+
+        homepageBookingBtn.addEventListener('mouseleave', function () {
+
+            homepageBookingBtn.style.letterSpacing = 5 + "px";
+        })
+
+        let homepageAchievementsBtn = document.getElementsByClassName('see-achievements-btn');
+        homepageAchievementsBtn = homepageAchievementsBtn[0];
+        console.log(homepageAchievementsBtn);
+
+        homepageAchievementsBtn.addEventListener('mouseenter', function () {
+
+            homepageAchievementsBtn.style.letterSpacing = 3 + "px";
+        })
+
+        homepageAchievementsBtn.addEventListener('mouseleave', function () {
+
+            homepageAchievementsBtn.style.letterSpacing = 5 + "px";
+        })
+    </script>
+
+{% endblock %}

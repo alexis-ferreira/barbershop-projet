@@ -1,0 +1,60 @@
+/******************** GENERAL ********************/
+
+@font-face {
+    font-family: "Louis George Cafe";
+    src: url("../police/louis_george_caf/Louis George Cafe.ttf");
+}
+
+body {
+    font-family: "Louis George Cafe", sans-serif;
+
+    background-color: #181818;
+}
+
+
+/******************** HEADER ********************/
+
+#header {
+
+    background-color: white;
+}
+
+#header > .header-container {
+
+    height: 100px;
+}
+
+#header > .header-container > .logo > .logo-background {
+
+    min-height: 100px;
+    max-width: 200px;
+
+    background-position: 0 -47px !important;
+    background-size: cover !important;
+}
+
+#header > .header-container > .navbar > .nav {
+
+    color: #707070;
+
+    font-size: 14px;
+}
+
+#header > .header-container > .social-network > .social-network-contact > a {
+
+    font-size: 22px;
+}
+
+
+
+/******************** FOOTER ********************/
+
+.list {
+
+    list-style: none;
+}
+
+#footer-container .contact-container {
+
+    background-color: rgba(0, 0, 0, 0.8);
+}
