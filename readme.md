@@ -17,3 +17,4 @@ Liste des technologies utilisé pour le projet :
 Liste des composants utilisé pour le projet :
 
 * [EasyAdmin](https://symfony.com/bundles/EasyAdminBundle/current/index.html) ( v4.x )
+* [MakerBundle](https://symfony.com/bundles/SymfonyMakerBundle/current/index.html)

@@ -1,8 +1,8 @@
 <section id="header" class="col-md-12 mx-auto">
     <div class="header-container d-flex col-md-10 mx-auto justify-content-between">
-        <div class="logo col-md-3">
+        <a href="{{ path('app_home') }}" class="logo col-md-3">
             <div class="logo-background" style="background: url('{{ asset('assets/images/logo.png') }}')"></div>
-        </div>
+        </a>
         <div class="navbar col-md-6">
             <ul class="d-flex justify-content-around nav col-md-12 px-4">
                 <li class="homepage text-uppercase">Accueil</li>
@@ -21,7 +21,7 @@
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
-            <a href="#" class="booking-btn btn btn-primary">
+            <a href="{{ path('app_register') }}" class="booking-btn btn btn-primary">
                 Se connecter
             </a>
         </div>

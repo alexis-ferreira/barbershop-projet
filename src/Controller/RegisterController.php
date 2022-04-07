@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class RegisterController extends AbstractController
 {
-    private $entityManager;
+    private EntityManagerInterface $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager){
         $this->entityManager = $entityManager;
@@ -20,7 +20,7 @@ class RegisterController extends AbstractController
 
 
     #[Route('/inscription', name: 'app_register')]
-    public function index(Request $request): Response
+    public function register(Request $request): Response
     {
 
         $user = new User();
@@ -36,8 +36,8 @@ class RegisterController extends AbstractController
             $this->entityManager->flush();
         }
 
-        return $this->render('register/index.html.twig', [
-            'form' => $form->createView()
+        return $this->renderForm('register/register.html.twig', [
+            'form' => $form,
         ]);
     }
 }
