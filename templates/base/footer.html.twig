@@ -1,5 +1,6 @@
 <section id="footer-container">
-    <div class="footer-contact col-md-12 py-4" style="background-image: url('{{ asset('images/footer.jpg') }}'); background-size: cover; background-position: center">
+    <div class="footer-contact col-md-12 py-4"
+         style="background-image: url('{{ asset('assets/images/footer.jpg') }}'); background-size: cover; background-position: center">
         <div class="contact-container d-flex justify-content-between col-md-7 my-4 px-5 mx-auto">
             <div class="about-contact text-light ms-4 my-5 col-md-4 pe-4">
                 <div class="contact-title h3 fw-bold">
@@ -51,11 +52,21 @@
             <div class="menu text-light">
                 <p class="text-dark h2">Menu</p>
                 <ul class="list ps-0">
-                    <li>Accueil</li>
-                    <li>Le salon</li>
-                    <li>Préstations</li>
-                    <li>Réalisations</li>
-                    <li>Contact</li>
+                    <li>
+                        <a href="{{ path('app_home') }}" class="text-decoration-none text-dark">Accueil</a>
+                    </li>
+                    <li>
+                        <a>Salon</a>
+                    </li>
+                    <li>
+                        <a>Préstations</a>
+                    </li>
+                    <li>
+                        <a>Réalisations</a>
+                    </li>
+                    <li>
+                        <a>Contact</a>
+                    </li>
                 </ul>
             </div>
             <div class="logo">
@@ -69,7 +80,8 @@
                     <li>12 Rue Thierry Verdier</li>
                     <li>75000 Paris</li>
                     <li>01 49 38 57 39</li>
-                    <li><a href="mailto: barbershop@gmail.com" class="text-light text-decoration-none">barbershop@gmail.com</a></li>
+                    <li><a href="mailto: barbershop@gmail.com" class="text-light text-decoration-none">barbershop@gmail.com</a>
+                    </li>
                 </ul>
             </div>
         </div>

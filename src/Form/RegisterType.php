@@ -13,6 +13,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\Type;
 
 class RegisterType extends AbstractType
 {
@@ -20,7 +22,8 @@ class RegisterType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'Email'
+                'label' => 'Email',
+                'required' => true,
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
@@ -31,12 +34,18 @@ class RegisterType extends AbstractType
                 'second_options' => [ 'label' => 'Confirmer votre mot de passe']
             ])
             ->add('firstname', TextType::class, [
-                'label' => 'Prénom'
+                'label' => 'Prénom',
+                'required' => true,
             ])
             ->add('lastname', TextType::class, [
-                'label' => 'Nom'
+                'label' => 'Nom',
+                'required' => true,
             ])
-            ->add('phone', NumberType::class)
+            ->add('phone', TextType::class, [
+                'label' => 'Numéro de téléphone',
+                'constraints' => new Length(10),
+                'required' => true,
+            ])
             ->add('submit', SubmitType::class, [
                 'label' => "S'inscrire"
             ])
