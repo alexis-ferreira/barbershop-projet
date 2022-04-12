@@ -19,10 +19,11 @@ Liste des composants utilisé pour le projet :
 * [EasyAdmin](https://symfony.com/bundles/EasyAdminBundle/current/index.html) ( v4.x )
 * [MakerBundle](https://symfony.com/bundles/SymfonyMakerBundle/current/index.html)
 
-## Problèmes rencontré
+## API
 ***
+Liste des composants utilisé pour le projet :
 
-
+* [MailJet](https://dev.mailjet.com/email/guides/?_ga=2.190428523.1717791676.1649800259-1313880474.1649800259#getting-started) ( v3.1 )
 
 
 
