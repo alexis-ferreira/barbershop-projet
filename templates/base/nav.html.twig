@@ -31,9 +31,21 @@
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
-            <a href="{{ path('app_login') }}" class="booking-btn btn btn-primary">
-                Se connecter
-            </a>
+
+            {% if app.user %}
+
+                <a href="{{ path('app_account') }}" id="btnMenuUser" class="booking-btn btn ps-0">
+                    Mon compte
+                </a>
+
+            {% else %}
+
+                <a href="{{ path('app_login') }}" class="booking-btn btn btn-primary">
+                    Se connecter
+                </a>
+
+            {% endif %}
+
         </div>
     </div>
 </section>
