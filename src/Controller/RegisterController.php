@@ -19,7 +19,6 @@ class RegisterController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-
     #[Route('/inscription', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $passwordHasher): Response
     {
@@ -28,6 +27,12 @@ class RegisterController extends AbstractController
 
         $form = $this->createForm(RegisterType::class, $user);
         $form->handleRequest($request);
+
+        // Mettre la première lettre du nom et du prénom en majuscule
+        $firstnameUppercase = ucfirst($user->getFirstname());
+        $lastnameUppercase = ucfirst($user->getLastname());
+        $user->setFirstname($firstnameUppercase);
+        $user->setLastname($lastnameUppercase);
 
         if ($form->isSubmitted() && $form->isValid()){
 

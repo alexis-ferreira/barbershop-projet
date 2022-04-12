@@ -41,9 +41,8 @@ class RegisterType extends AbstractType
                 'label' => 'Nom',
                 'required' => true,
             ])
-            ->add('phone', TextType::class, [
+            ->add('phone', NumberType::class, [
                 'label' => 'Numéro de téléphone',
-                'constraints' => new Length(10),
                 'required' => true,
             ])
             ->add('submit', SubmitType::class, [

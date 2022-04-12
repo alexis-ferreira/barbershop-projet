@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Compte{% endblock %}
+
+{#
+
+USERS :
+    - Modifier mon mot de passe
+    - Modifier mes informations
+    - Mes rendez-vous
+
+ADMIN :
+    -
+#}
+
+{% block body %}
+
+    <section id="my-account" class="text-light m-5 py-4">
+        <li class="profile-container col-md-10 my-5 pb-5 mx-auto text-light d-flex justify-content-between">
+            <div class="profile-view col-md-5 d-flex flex-column justify-content-center align-items-center">
+                <div class="profile-picture rounded-2"
+                     style="width: 200px; height: 200px; background-color: white;">
+                </div>
+                <div class="name mt-4 text-center">
+                    Bienvenue<br>
+                    {{ app.user.firstname }}&nbsp;{{ app.user.lastname }}
+                </div>
+            </div>
+            <div id="account-separator" style="width: 2px; height: 150px" class="bg-primary my-5"></div>
+            <div class="profile-informations col-md-5">
+                <ul class="d-flex flex-column justify-content-center" style="height: 100%">
+                    <li class="d-flex justify-content-center"></li>
+                    <li class="d-flex justify-content-center"></li>
+                    <li class="d-flex justify-content-center">
+                        <a href="#!" class="text-decoration-none text-light my-3">Voir mes rendez-vous</a>
+                    <li class="d-flex justify-content-center">
+                        <a href="{{ path('app_logout') }}" class="btn btn-secondary mt-4">Se déconnecter</a>
+                    </li>
+                </ul>
+            </div>
+    </section>
+{% endblock %}

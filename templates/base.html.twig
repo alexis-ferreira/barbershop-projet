@@ -25,6 +25,15 @@
 
 {{ include('base/nav.html.twig') }}
 
+{% if title is defined %}
+
+    <div class="title-page pt-5">
+        <div class="title text-center h2 text-light mt-5 text-uppercase">{{ title }}</div>
+        <div class="separator col-4 bg-primary mx-auto mt-4" style="height: 1px"></div>
+    </div>
+
+{% endif %}
+
 {% block body %}{% endblock %}
 
 {{ include('base/footer.html.twig') }}
