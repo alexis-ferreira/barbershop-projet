@@ -25,7 +25,16 @@ Liste des composants utilisé pour le projet :
 
 * [MailJet](https://dev.mailjet.com/email/guides/?_ga=2.190428523.1717791676.1649800259-1313880474.1649800259#getting-started) ( v3.1 )
 
+## Bugs rencontrés
+***
+**Bug :** L'utilisateur peut modifier son mot de passe alors que son ancien mot de passe ne correspond pas.
 
+**Patch** : 
+
+
+## Info diverse
+***
+Adresse token git : https://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@github.com/alexis-ferreira/barbershop-projet
 
 
 

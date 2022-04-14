@@ -49,3 +49,14 @@
         </div>
     </div>
 </section>
+
+{% for notification in app.flashes('success') %}
+    <div class="row justify-content-center mt-5">
+        <div class="alert alert-success col-md-6 text-center mb-0">{{ notification }}</div>
+    </div>
+{% endfor %}
+{% for notification in app.flashes('error') %}
+    <div class="row justify-content-center mt-4">
+        <div class="alert alert-danger col-md-6 text-center">{{ notification }}</div>
+    </div>
+{% endfor %}

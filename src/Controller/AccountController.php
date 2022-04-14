@@ -55,12 +55,21 @@ class AccountController extends AbstractController
 
                 $this->entityManager->persist($user);
                 $this->entityManager->flush();
+
+                $this->addFlash('success','Votre mot de passe à bien été changé');
+
+                return $this->redirectToRoute('app_account');
+
+            } else {
+
+                $this->addFlash('error','Votre mot de passe actuel ne correspond pas avec celui saisi');
+
+                return $this->redirectToRoute('app_edit_password');
             }
         }
 
         return $this->render('account/changePassword.html.twig', [
             'form' => $form->createView(),
-            'title' => 'Modifier mon mot de passe'
         ]);
     }
 
@@ -72,6 +81,15 @@ class AccountController extends AbstractController
 
         $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()){
+
+            $this->entityManager->persist($user);
+            $this->entityManager->flush();
+
+            $this->addFlash('success','Vos informations ont bien été mise à jour');
+
+            return $this->redirectToRoute('app_account');
+        }
 
         return $this->render('account/editProfile.html.twig', [
             'title' => 'Modifier mes informations',
