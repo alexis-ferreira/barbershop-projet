@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\ChangePasswordType;
+use App\Form\EditProfileType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -59,15 +60,22 @@ class AccountController extends AbstractController
 
         return $this->render('account/changePassword.html.twig', [
             'form' => $form->createView(),
+            'title' => 'Modifier mon mot de passe'
         ]);
     }
 
     #[Route('/compte/modifier-mes-informations', name: 'app_edit_profile')]
-    public function edit_profile()
+    public function edit_profile(Request $request)
     {
+        $user = $this->getUser();
+        $form = $this->createForm(EditProfileType::class, $user);
+
+        $form->handleRequest($request);
+
 
         return $this->render('account/editProfile.html.twig', [
-            'title' => 'Modifier mes informations'
+            'title' => 'Modifier mes informations',
+            'form' => $form->createView(),
         ]);
     }
 
