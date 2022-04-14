@@ -28,11 +28,22 @@
 {% if title is defined %}
 
     <div class="title-page pt-5">
-        <div class="title text-center h2 text-light mt-5 text-uppercase">{{ title }}</div>
+        <div class="title text-center h2 text-light mt-4 text-uppercase">{{ title }}</div>
         <div class="separator col-4 bg-primary mx-auto mt-4" style="height: 1px"></div>
     </div>
 
 {% endif %}
+
+{% for notification in app.flashes('success') %}
+    <div class="row justify-content-center mt-4">
+        <div class="alert alert-success col-md-6 text-center mb-0">{{ notification }}</div>
+    </div>
+{% endfor %}
+{% for notification in app.flashes('error') %}
+    <div class="row justify-content-center mt-4">
+        <div class="alert alert-danger col-md-6 text-center mb-0">{{ notification }}</div>
+    </div>
+{% endfor %}
 
 {% block body %}{% endblock %}
 

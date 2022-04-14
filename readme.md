@@ -27,9 +27,6 @@ Liste des composants utilisé pour le projet :
 
 ## Bugs rencontrés
 ***
-**Bug :** L'utilisateur peut modifier son mot de passe alors que son ancien mot de passe ne correspond pas.
-
-**Patch** : 
 
 
 ## Info diverse

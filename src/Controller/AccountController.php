@@ -70,6 +70,7 @@ class AccountController extends AbstractController
 
         return $this->render('account/changePassword.html.twig', [
             'form' => $form->createView(),
+            'title' => 'Modifier mot de passe'
         ]);
     }
 
