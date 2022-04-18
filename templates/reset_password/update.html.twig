@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau mot de passe{% endblock %}
+
+{% block body %}
+
+    <section id="edit-account" class="text-light col-md-4 mx-auto mb-5 mt-4 pt-2 pb-5">
+
+        {{ form_start(form) }}
+
+        {{ form_row(form.new_password) }}
+
+        <div class="d-flex align-items-center mt-5 d-flex justify-content-center">
+            {{ form_row(form.submit) }}
+        </div>
+
+        {{ form_end(form) }}
+
+    </section>
+
+{% endblock %}
+

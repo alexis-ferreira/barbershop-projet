@@ -21,6 +21,7 @@
             <label for="inputPassword" class="mt-4 mb-2">Mot de passe</label>
             <input type="password" name="password" id="inputPassword" class="form-control" style="max-width: 300px"
                    autocomplete="current-password" required>
+            <a href="{{ path('app_reset_password_request') }}" class="forgot-password mt-2 text-light" style="font-size: small">Mot de passe oublié ?</a>
 
             <input type="hidden" name="_csrf_token"
                    value="{{ csrf_token('authenticate') }}"
