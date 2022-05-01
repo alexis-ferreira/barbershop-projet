@@ -29,9 +29,11 @@ ADMIN :
             <div id="account-separator" style="width: 2px; height: 150px" class="bg-primary my-5"></div>
             <div class="profile-informations col-md-5">
                 <ul class="d-flex flex-column justify-content-center" style="height: 100%">
-                    <li class="d-flex justify-content-center">
-                        <a href="{{ path('admin') }}" class="text-decoration-none text-light py-2">Accès backoffice</a>
-                    </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="d-flex justify-content-center">
+                            <a href="{{ path('admin') }}" class="text-decoration-none text-light py-2">Accès backoffice</a>
+                        </li>
+                    {% endif %}
                     <li class="d-flex justify-content-center">
                         <a href="{{ path('app_edit_profile') }}" class="text-decoration-none text-light py-2">Modifier mes informations</a>
                     </li>

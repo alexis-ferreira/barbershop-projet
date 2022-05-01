@@ -16,10 +16,10 @@
 
         <section id="login" class="col-md-10 mx-auto mb-5 pb-5 text-light d-flex flex-column align-items-center">
             <label for="inputEmail" class="mt-5 mb-2">Email</label>
-            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" style="max-width: 300px"
+            <input type="email" value="{{ last_username }}" placeholder="Votre email" name="email" id="inputEmail" class="form-control" style="max-width: 300px"
                    autocomplete="email" required autofocus>
             <label for="inputPassword" class="mt-4 mb-2">Mot de passe</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" style="max-width: 300px"
+            <input type="password" name="password" id="inputPassword" placeholder="Votre mot de passe" class="form-control" style="max-width: 300px"
                    autocomplete="current-password" required>
             <a href="{{ path('app_reset_password_request') }}" class="forgot-password mt-2 text-light" style="font-size: small">Mot de passe oublié ?</a>
 
@@ -38,10 +38,10 @@
             </div>
             #}
 
-            <button class="btn btn-lg btn-primary mt-5 mb-4" type="submit">
+            <button class="btn btn-lg btn-primary mt-5 mb-1" type="submit">
                 Connexion
             </button>
-            <div class="mb-2">ou</div>
+            <div>ou</div>
             <a href="{{ path('app_register') }}" class="text-light">Inscrivez-vous</a>
         </section>
     </form>
