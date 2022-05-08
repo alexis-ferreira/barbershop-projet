@@ -10,15 +10,45 @@
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/fontawesome/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/base.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/fullcalendar/main.min.css') }}">
     {% endblock %}
 
     {% block javascripts %}
-        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('assets/js/all.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/fontawesome/all.js') }}"></script>
+        <script src="{{ asset('assets/js/fullcalendar/main.min.js') }}"></script>
+        <script src="{{ asset('assets/js/fullcalendar/locales-all.min.js') }}"></script>
+
+        <script>
+            window.onload = () => {
+                let calendarElt = document.querySelector("#calendar");
+
+                let calendar = new FullCalendar.Calendar(calendarElt, {
+
+                    initialView: 'timeGridWeek',
+                    locale: 'fr',
+                    timeZone: 'Europe/Paris',
+                    headerToolbar: {
+                        left: '',
+                        center: 'title',
+                        end: 'today prev,next'
+                    },
+                    allDaySlot: false,
+                    slotMinTime: "07:00:00",
+                    slotMaxTime: "22:00:00",
+                    nowIndicator: true,
+                    editable: true,
+                    height: 'auto'
+                })
+
+                calendar.render()
+
+            };
+        </script>
     {% endblock %}
 </head>
 <body>

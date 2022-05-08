@@ -18,8 +18,9 @@ ADMIN :
     <section id="my-account" class="text-light m-5 py-4">
         <li class="profile-container col-md-10 my-5 pb-5 mx-auto text-light d-flex justify-content-between">
             <div class="profile-view col-md-5 d-flex flex-column justify-content-center align-items-center">
-                <div class="profile-picture rounded-2"
-                     style="width: 200px; height: 200px; background-color: white;">
+                <div class="profile-picture d-flex justify-content-center align-items-center"
+                     style="width: 200px; height: 200px; background-color: white; border-radius: 50%;">
+                    <i class="fa-solid fa-user text-dark" style="font-size: 9em"></i>
                 </div>
                 <div class="name mt-4 text-center">
                     Bienvenue<br>
@@ -32,6 +33,9 @@ ADMIN :
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="d-flex justify-content-center">
                             <a href="{{ path('admin') }}" class="text-decoration-none text-light py-2">Accès backoffice</a>
+                        </li>
+                        <li class="d-flex justify-content-center">
+                            <a href="{{ path('app_booking') }}" class="text-decoration-none text-light py-2">Agenda</a>
                         </li>
                     {% endif %}
                     <li class="d-flex justify-content-center">
