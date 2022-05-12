@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="{{ asset('assets/css/fontawesome/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/base.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/account.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/addBooking.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/fullcalendar/main.min.css') }}">
     {% endblock %}
 
@@ -22,33 +24,6 @@
         <script src="{{ asset('assets/js/fontawesome/all.js') }}"></script>
         <script src="{{ asset('assets/js/fullcalendar/main.min.js') }}"></script>
         <script src="{{ asset('assets/js/fullcalendar/locales-all.min.js') }}"></script>
-
-        <script>
-            window.onload = () => {
-                let calendarElt = document.querySelector("#calendar");
-
-                let calendar = new FullCalendar.Calendar(calendarElt, {
-
-                    initialView: 'timeGridWeek',
-                    locale: 'fr',
-                    timeZone: 'Europe/Paris',
-                    headerToolbar: {
-                        left: '',
-                        center: 'title',
-                        end: 'today prev,next'
-                    },
-                    allDaySlot: false,
-                    slotMinTime: "07:00:00",
-                    slotMaxTime: "22:00:00",
-                    nowIndicator: true,
-                    editable: true,
-                    height: 'auto'
-                })
-
-                calendar.render()
-
-            };
-        </script>
     {% endblock %}
 </head>
 <body>

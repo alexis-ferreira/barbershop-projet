@@ -1,0 +1,22 @@
+#my-account-responsive {
+
+    display: none;
+}
+
+#my-account {
+
+    display: block;
+}
+
+@media only screen and (max-width: 768px) {
+
+    #my-account-responsive {
+
+        display: block;
+    }
+
+    #my-account {
+
+        display: none;
+    }
+}

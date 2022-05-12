@@ -102,3 +102,24 @@
 
     transition: letter-spacing 200ms;
 }
+
+
+/******************** RESPONSIVE ********************/
+
+@media only screen and (max-width: 768px) {
+
+    #prestations > .prestations-container > .homepage-separator {
+
+        display: none;
+    }
+
+    #coiffeur-picture {
+
+        display: none;
+    }
+
+    #le-salon > .salon-container > .salon > .salon-picture-container {
+
+        width: 100%;
+    }
+}

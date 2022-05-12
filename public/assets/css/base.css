@@ -14,6 +14,16 @@ body {
 
 /******************** HEADER ********************/
 
+#blank-space {
+
+    display: none;
+}
+
+#header > .header-responsive {
+
+    display: none;
+}
+
 #header {
 
     background-color: white;
@@ -46,7 +56,6 @@ body {
 }
 
 
-
 /******************** FOOTER ********************/
 
 .list {
@@ -58,3 +67,73 @@ body {
 
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+#logo-footer-responsive {
+
+    display: none;
+}
+
+#logo-footer-desktop {
+
+    display: block;
+}
+
+/******************** RESPONSIVE ********************/
+
+/**** HEADER ****/
+
+@media only screen and (max-width: 768px) {
+
+    #blank-space {
+
+        display: block;
+    }
+
+    #header > .header-container {
+
+        display: none !important;
+    }
+
+    #header > .header-responsive {
+
+        display: flex;
+        justify-content: space-between;
+
+        height: 80px;
+    }
+
+    #header > .header-responsive > .logo-responsive > .logo > .logo-background {
+
+        background-size: cover !important;
+        background-position: 0 -40px !important;
+
+        min-width: 170px;
+        min-height: 100px;
+    }
+
+
+
+    /**** FOOTER ****/
+
+    #logo-footer-responsive {
+
+        display: flex;
+        justify-content: center;
+    }
+
+    #logo-footer-desktop {
+
+        display: none;
+    }
+
+    #footer-container > .footer-contact > .contact-container {
+
+        justify-content: center !important;
+    }
+
+    #footer-container > .footer-contact > .contact-container > .about-contact {
+
+        margin-left: 0 !important;
+    }
+
+    }

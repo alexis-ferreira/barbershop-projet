@@ -12,7 +12,7 @@
                     <a href="{{ path('app_about') }}#le-salon" class="text-decoration-none text-dark">Le salon</a>
                 </li>
                 <li class="prestation text-uppercase">
-                    <a href="#!" class="text-decoration-none text-dark">Prestations</a>
+                    <a href="{{ path('app_about') }}#prestations" class="text-decoration-none text-dark">Prestations</a>
                 </li>
                 <li class="realisation text-uppercase">
                     <a href="{{ path('app_portfolio') }}" class="text-decoration-none text-dark">Réalisations</a>
@@ -48,4 +48,87 @@
 
         </div>
     </div>
+    <div id="blank-space" style="height: 50px;"></div>
+    <div class="header-responsive bg-light fixed-top">
+        <div id="menu-burger" class="position-absolute col-12 bg-dark" style="z-index: 1032; height: 736px; display: none;">
+            <div id="close-menu-burger" class="d-flex justify-content-end">
+                <i class="fa-solid fa-xmark text-light fs-1 position-absolute mt-4 me-4"></i>
+            </div>
+            <div class="container-menu-burger d-flex justify-content-center align-items-center" style="height: 100%;">
+                <ul class="text-center nav col-md-12 px-4" style="height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <li class="homepage text-uppercase">
+                        <a href="{{ path('app_home') }}" class="text-decoration-none text-primary">Accueil</a>
+                    </li>
+                    <li class="salon text-uppercase">
+                        <a href="{{ path('app_about') }}#le-salon" class="text-decoration-none text-primary">Le salon</a>
+                    </li>
+                    <li class="prestation text-uppercase">
+                        <a href="{{ path('app_about') }}#prestations" class="text-decoration-none text-primary">Prestations</a>
+                    </li>
+                    <li class="realisation text-uppercase">
+                        <a href="{{ path('app_portfolio') }}" class="text-decoration-none text-primary">Réalisations</a>
+                    </li>
+                    <li class="contact text-uppercase">
+                        <a href="#!" class="text-decoration-none text-primary">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="menu-responsive" class="d-flex align-items-center ms-4">
+            <i class="fa-solid fa-bars fs-2" id="menu-burger-open"></i>
+        </div>
+        <div class="logo-responsive mx-2">
+            <a href="{{ path('app_home') }}" class="logo col-md-3">
+                <div class="logo-background" style="background: url('{{ asset('assets/images/logo.png') }}')"></div>
+            </a>
+        </div>
+        <div class="social-network d-flex col-md-3 justify-content-end align-items-center">
+            <div class="social-network-contact d-flex">
+                <a href="https://facebook.fr/" target="_blank" class="facebook btn p-1">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.fr/" target="_blank" class="instagram btn p-1">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            {% if app.user %}
+                <div class="separator bg-primary mx-1" style="width: 1px; height: 20px"></div>
+
+                <a href="{{ path('app_account') }}" id="btnMenuUser" class="booking-btn btn p-0 me-4">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+
+            {% else %}
+
+                <a href="{{ path('app_login') }}" class="booking-btn btn btn-sm me-3 ms-2 btn-primary">
+                    Se connecter
+                </a>
+
+            {% endif %}
+
+        </div>
+    </div>
 </section>
+
+<script>
+    let menuBurgerBtn = document.getElementById('menu-responsive');
+    let menuBurger = document.getElementById('menu-burger')
+    let menuBurgerCloseBtn = document.getElementById('close-menu-burger')
+    let body = document.getElementsByTagName("body");
+    body = body[0];
+
+    menuBurgerBtn.addEventListener('click', function () {
+
+        menuBurger.style.display = "block";
+        menuBurger.style.height = window.innerHeight + "px";
+        body.style.overflow = "hidden"
+
+    })
+
+    menuBurgerCloseBtn.addEventListener('click', function (){
+
+        menuBurger.style.display = "none";
+        body.style.overflow = "initial"
+    })
+</script>

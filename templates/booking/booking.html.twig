@@ -4,6 +4,33 @@
 
 {% block body %}
 
+    <script>
+        window.onload = () => {
+            let calendarElt = document.querySelector("#calendar");
+
+            let calendar = new FullCalendar.Calendar(calendarElt, {
+
+                initialView: 'timeGridWeek',
+                locale: 'fr',
+                timeZone: 'Europe/Paris',
+                headerToolbar: {
+                    left: '',
+                    center: 'title',
+                    end: 'today prev,next'
+                },
+                allDaySlot: false,
+                slotMinTime: "09:00:00",
+                slotMaxTime: "20:00:00",
+                nowIndicator: true,
+                height: 'auto',
+                events: {{ data|raw }}
+            })
+
+            calendar.render()
+
+        };
+    </script>
+
     <div id="calendar" class="col-md-11 mx-auto p-5 my-5" style="background-color: mintcream"></div>
 
 {% endblock %}

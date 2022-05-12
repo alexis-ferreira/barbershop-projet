@@ -2,21 +2,10 @@
 
 {% block title %}Mon Compte{% endblock %}
 
-{#
-
-USERS :
-    - Modifier mon mot de passe
-    - Modifier mes informations
-    - Mes rendez-vous
-
-ADMIN :
-    -
-#}
-
 {% block body %}
 
     <section id="my-account" class="text-light m-5 py-4">
-        <li class="profile-container col-md-10 my-5 pb-5 mx-auto text-light d-flex justify-content-between">
+        <div class="profile-container col-md-10 my-5 pb-5 mx-auto text-light d-flex justify-content-between">
             <div class="profile-view col-md-5 d-flex flex-column justify-content-center align-items-center">
                 <div class="profile-picture d-flex justify-content-center align-items-center"
                      style="width: 200px; height: 200px; background-color: white; border-radius: 50%;">
@@ -32,25 +21,67 @@ ADMIN :
                 <ul class="d-flex flex-column justify-content-center" style="height: 100%">
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="d-flex justify-content-center">
-                            <a href="{{ path('admin') }}" class="text-decoration-none text-light py-2">Accès backoffice</a>
+                            <a href="{{ path('admin') }}" class="text-decoration-none text-light py-2">Accès
+                                backoffice</a>
                         </li>
                         <li class="d-flex justify-content-center">
                             <a href="{{ path('app_booking') }}" class="text-decoration-none text-light py-2">Agenda</a>
                         </li>
                     {% endif %}
                     <li class="d-flex justify-content-center">
-                        <a href="{{ path('app_edit_profile') }}" class="text-decoration-none text-light py-2">Modifier mes informations</a>
+                        <a href="{{ path('app_edit_profile') }}" class="text-decoration-none text-light py-2">Modifier
+                            mes informations</a>
                     </li>
                     <li class="d-flex justify-content-center">
-                        <a href="{{ path('app_edit_password') }}" class="text-decoration-none text-light py-2">Modifier mon mot de passe</a>
+                        <a href="{{ path('app_edit_password') }}" class="text-decoration-none text-light py-2">Modifier
+                            mon mot de passe</a>
                     </li>
 
-                    <li class="d-flex justify-content-center">
-                        <a href="#!" class="text-decoration-none text-light py-2">Voir mes rendez-vous</a>
                     <li class="d-flex justify-content-center">
                         <a href="{{ path('app_logout') }}" class="btn btn-secondary mt-5">Se déconnecter</a>
                     </li>
                 </ul>
             </div>
+        </div>
+    </section>
+
+    <section id="my-account-responsive" class="text-light m-5 py-4">
+        <div class="profile-container col-md-10 my-5 pb-5 mx-auto text-light d-flex flex-column">
+            <div class="profile-view col-md-5 d-flex flex-column justify-content-center align-items-center">
+                <div class="profile-picture d-flex justify-content-center align-items-center"
+                     style="width: 200px; height: 200px; background-color: white; border-radius: 50%;">
+                    <i class="fa-solid fa-user text-dark" style="font-size: 9em"></i>
+                </div>
+                <div class="name mt-4 text-center">
+                    Bienvenue<br>
+                    {{ app.user.firstname }}&nbsp;{{ app.user.lastname }}
+                </div>
+            </div>
+            <div id="account-separator" style="width: 100px; height: 1px" class="bg-primary my-5 mx-auto"></div>
+            <div class="profile-informations col-md-5">
+                <ul class="d-flex flex-column justify-content-center p-0" style="height: 100%">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="d-flex justify-content-center">
+                            <a href="{{ path('admin') }}" class="text-decoration-none text-light py-2">Accès
+                                backoffice</a>
+                        </li>
+                        <li class="d-flex justify-content-center">
+                            <a href="{{ path('app_booking') }}" class="text-decoration-none text-light py-2">Agenda</a>
+                        </li>
+                    {% endif %}
+                    <li class="d-flex justify-content-center">
+                        <a href="{{ path('app_edit_profile') }}" class="text-decoration-none text-light py-2">Modifier
+                            mes informations</a>
+                    </li>
+                    <li class="d-flex justify-content-center">
+                        <a href="{{ path('app_edit_password') }}" class="text-decoration-none text-light py-2">Modifier
+                            mon mot de passe</a>
+                    </li>
+                    <div class="col-md-5 mx-auto">
+                        <a href="{{ path('app_logout') }}" class="btn btn-secondary mt-5">Se déconnecter</a>
+                    </div>
+                </ul>
+            </div>
+        </div>
     </section>
 {% endblock %}

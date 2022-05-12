@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\ChangePasswordType;
 use App\Form\EditProfileType;
+use App\Repository\BookingRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,10 +26,13 @@ class AccountController extends AbstractController
     }
 
     #[Route('/compte', name: 'app_account')]
-    public function index(): Response
+    public function index(BookingRepository $bookingRepository): Response
     {
+        $userBookings = $bookingRepository->findBy(array('user' => $this->getUser()));
+
         return $this->render('account/account.html.twig', [
             'title' => 'Mon compte',
+            'bookings' => $userBookings
         ]);
     }
 

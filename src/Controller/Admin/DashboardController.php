@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Booking;
 use App\Entity\Portfolio;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -55,5 +56,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToRoute("Retourner à l'accueil", 'fa fa-arrow-left', 'app_home');
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('Portfolio', 'fas fa-image', Portfolio::class);
+        yield MenuItem::linkToCrud('Rendez-vous', 'fas fa-calendar', Booking::class);
     }
 }

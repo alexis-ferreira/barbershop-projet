@@ -8,14 +8,14 @@
 
     {{ form_start(form) }}
 
-    <div class="col-md-8 mx-auto d-flex justify-content-center mt-5">
+    <div class="col-md-7 mx-auto d-flex justify-content-around flex-wrap mt-5">
 
-        <div class="container-register-left col-4 text-light">
+        <div class="container-register-left col-md-5 text-light mx-2">
             <div class="col-md-10">{{ form_row(form.firstname) }}</div>
             <div class="col-md-10">{{ form_row(form.lastname) }}</div>
             <div class="col-md-10">{{ form_row(form.phone) }}</div>
         </div>
-        <div class="container-register-right d-flex flex-column align-items-end col-4 text-light">
+        <div class="container-register-right d-flex flex-column align-items-end col-md-5 text-light mx-2">
             <div class="col-md-10">{{ form_row(form.email) }}</div>
             <div class="col-md-10">{{ form_row(form.password) }}</div>
         </div>

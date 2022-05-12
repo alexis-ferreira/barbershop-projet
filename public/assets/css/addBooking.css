@@ -1,0 +1,18 @@
+#booking_start > .input-group > .input-group-text, #booking_start_time_minute{
+
+    display: none;
+}
+
+#booking_start {
+    display: flex;
+}
+
+#booking_start > .input-group {
+    width: 20%;
+}
+
+#booking_start > #booking_start_date {
+    margin-right: 10px;
+
+    width: 50%;
+}
