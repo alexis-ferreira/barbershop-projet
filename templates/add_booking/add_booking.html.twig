@@ -4,16 +4,29 @@
 
 {% block body %}
 
-    <section id="add-booking" class="text-light col-md-4 mx-auto mb-5 mt-4 pt-2 pb-5">
+    {% if app.user.isBanned %}
 
-        {{ form_start(form) }}
+        <div class="container-alert py-5">
+            <div class="alert alert-danger mx-auto col-md-8 text-center my-5">Vous ne pouvez pas prendre de rendez-vous
+                ! Contacter le salon pour plus de renseignement.
+            </div>
+        </div>
 
-        {{ form_row(form.title) }}
+    {% else %}
 
-        {{ form_row(form.start) }}
+        <section id="add-booking" class="text-light col-md-4 mx-auto mb-5 mt-4 pt-2 pb-5">
 
-        {{ form_end(form) }}
+            {{ form_start(form) }}
 
-    </section>
+            {{ form_row(form.title) }}
+
+            {{ form_row(form.start) }}
+
+            {{ form_end(form) }}
+
+        </section>
+
+    {% endif %}
+
 
 {% endblock %}

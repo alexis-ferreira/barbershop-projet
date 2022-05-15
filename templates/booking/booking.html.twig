@@ -10,20 +10,20 @@
 
             let calendar = new FullCalendar.Calendar(calendarElt, {
 
-                initialView: 'timeGridWeek',
-                locale: 'fr',
-                timeZone: 'Europe/Paris',
-                headerToolbar: {
-                    left: '',
-                    center: 'title',
-                    end: 'today prev,next'
+                initialView: 'timeGridWeek', // La vue initial est réglé sur un affichage par semaine
+                locale: 'fr', // Met en francais la langue du calendrier
+                timeZone: 'Europe/Paris', // Indique le fuseau horaire
+                headerToolbar: { // Paramètre le header du calendrier
+                    left: '', // Rien à gauche
+                    center: 'title', // La date au millieu
+                    end: 'today prev,next' // Les buttons "Aujourd'hui" et les flèches gauche et droite pour avancer ou reculer d'une semaine
                 },
-                allDaySlot: false,
-                slotMinTime: "09:00:00",
-                slotMaxTime: "20:00:00",
-                nowIndicator: true,
-                height: 'auto',
-                events: {{ data|raw }}
+                allDaySlot: false, // Désactive la case "Toute la journée"
+                slotMinTime: "09:00:00", // Le calendrier commence à 9h
+                slotMaxTime: "20:00:00", // Le calendrier termine à 20h
+                nowIndicator: true, // Indique avec une flèche et un trait le moment de la journée
+                height: 'auto', // Modifie la taille de la hauteur du calendrier
+                events: {{ data|raw }} // Filtrage des données pour les affiché sur le calendrier
             })
 
             calendar.render()

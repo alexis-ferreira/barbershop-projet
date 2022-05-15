@@ -12,13 +12,13 @@ class BookingController extends AbstractController
     #[Route('/admin/booking', name: 'app_booking')]
     public function index(BookingRepository $bookingRepository): Response
     {
-        $events = $bookingRepository->findAll();
+        $events = $bookingRepository->findAll(); // On récupère tous les rendez-vous existants
 
-        $bookings = [];
+        $bookings = []; // On crée un tableau vide
 
-        foreach ($events as $event){
+        foreach ($events as $event){ // On fait une boucle pour remplir le tableau avec tout les rendez-vous
 
-            $bookings[] = [
+            $bookings[] = [ // on récupère toutes les données pour les envoyées dans le tableau
                 'id' => $event->getId(),
                 'userId' => $event->getUser(),
                 'start' => $event->getStart()->format('Y-m-d H:i:s'),
@@ -30,7 +30,7 @@ class BookingController extends AbstractController
             ];
         }
 
-        $data = json_encode($bookings);
+        $data = json_encode($bookings); // On stock dans la variable le tableau encodé en json pour que FullCalendar puisse le lire
 
         return $this->render('booking/booking.html.twig', compact('data'));
     }

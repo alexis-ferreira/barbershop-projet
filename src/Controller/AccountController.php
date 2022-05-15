@@ -40,27 +40,27 @@ class AccountController extends AbstractController
     public function change_password(Request $request, UserPasswordHasherInterface $passwordHasher): Response
     {
 
-        $user = $this->getUser();
-        $form = $this->createForm(ChangePasswordType::class, $user);
+        $user = $this->getUser(); // On récupère l'utilisateur
+        $form = $this->createForm(ChangePasswordType::class, $user); // On crée le formulaire
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-            $old_password = $form->get('old_password')->getData();
+            $old_password = $form->get('old_password')->getData(); // On récupère l'ancien mot de passe
 
             if ($passwordHasher->isPasswordValid($user, $old_password)){
-                $new_password = $form->get('new_password')->getData();
-                $password = $passwordHasher->hashPassword(
+                $new_password = $form->get('new_password')->getData(); // On récupère le nouveau mot de passe en claire
+                $password = $passwordHasher->hashPassword( // On hash le nouveau mot de passe
                     $user,
                     $new_password
                 );
 
-                $user->setPassword($password);
+                $user->setPassword($password); // On set le mot de passe
 
                 $this->entityManager->persist($user);
                 $this->entityManager->flush();
 
-                $this->addFlash('success','Votre mot de passe à bien été changé');
+                $this->addFlash('success','Votre mot de passe à bien été changé'); // Notification success
 
                 return $this->redirectToRoute('app_account');
 
@@ -81,17 +81,17 @@ class AccountController extends AbstractController
     #[Route('/compte/modifier-mes-informations', name: 'app_edit_profile')]
     public function edit_profile(Request $request)
     {
-        $user = $this->getUser();
-        $form = $this->createForm(EditProfileType::class, $user);
+        $user = $this->getUser(); // On récupère l'utilisateur
+        $form = $this->createForm(EditProfileType::class, $user); // On crée le formulaire
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
 
-            $this->entityManager->persist($user);
-            $this->entityManager->flush();
+            $this->entityManager->persist($user); // On prépare la requète
+            $this->entityManager->flush(); // On envoie en base de données
 
-            $this->addFlash('success','Vos informations ont bien été mise à jour');
+            $this->addFlash('success','Vos informations ont bien été mise à jour'); // Notification success
 
             return $this->redirectToRoute('app_account');
         }

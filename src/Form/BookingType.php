@@ -17,7 +17,7 @@ class BookingType extends AbstractType
     {
         $builder
             ->add('title', ChoiceType::class, [
-                'label' => 'Préstation',
+                'label' => 'Prestation',
                 'choices' => [
                     'Coupe (15€)' => 'Coupe',
                     'Coupe + Taille de la barbe (18€)' => 'Coupe + Taille Barbe',
